@@ -53,9 +53,24 @@ Contributions are welcome! If you'd like to contribute to the Flutter Book Libra
 
 Fork the repository and create your branch (git checkout -b feature/your-feature).
 Commit your changes (git commit -am 'Add some feature').
+
+
 Push to your branch (git push origin feature/your-feature).
 Create a new Pull Request.
-Technologies Used
-Flutter
-Dart
-HTTP package for API communication
+## Live URL
+**[See Here](https://odoo-combat-latest.onrender.com)**
+
+## Application Repositoty
+- **[APP REPO](https://github.com/tejasvmodi/oddo_combat)**
+
+## Team Members
+
+- **Smit Joshi**  - [GitHub Profile](https://github.com/smit-joshi814)
+- **Tejasv Modi** - [GitHub Profile](https://github.com/tejasvmodi)
+- **Shreya Acharya** - [GitHub Profile](https://github.com/ShreyaAcharya24)
+- **Yash Mehta** - [GitHub Profile](https://github.com/yash655)
+
+## Problem Statement
+
+Tackling Public Litter: Application for Efficient Garbage Management : Creating a full stack application for efficient garbage management to tackle public litter can significantly improve urban cleanliness and resource management
+
