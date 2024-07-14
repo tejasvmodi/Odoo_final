@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:librabry_management_system_odoo/Screens/Home%20Screen/home.dart';
 class LoginUser extends StatefulWidget {
   const LoginUser({super.key});
 
@@ -13,17 +13,21 @@ class _LoginUserState extends State<LoginUser> {
   final _password = TextEditingController();
   @override
   Widget build(BuildContext context) {
+  
     return Scaffold(
-       body: Center(
+      
+      body: Center(
         child: Container(
           padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.02),
-          height: MediaQuery.of(context).size.height * 0.7,
+          height: MediaQuery.of(context).size.height * 0.6,
           width: MediaQuery.of(context).size.width * 0.9,
           decoration: BoxDecoration(
-              border: Border.all(color: Colors.black),
-              borderRadius: BorderRadius.all(Radius.elliptical(
-                  MediaQuery.of(context).size.width * 0.04,
-                  MediaQuery.of(context).size.width * 0.04))),
+            border: Border.all(color: Colors.black),
+            borderRadius: BorderRadius.all(
+              Radius.elliptical(MediaQuery.of(context).size.width * 0.04,
+                  MediaQuery.of(context).size.width * 0.04),
+            ),
+          ),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -70,7 +74,6 @@ class _LoginUserState extends State<LoginUser> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.03,
                 ),
-              
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.03,
                 ),
@@ -91,11 +94,7 @@ class _LoginUserState extends State<LoginUser> {
                         backgroundColor: const MaterialStatePropertyAll(
                             Color.fromARGB(255, 202, 212, 230))),
                     onPressed: () {
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //       builder: (context) => const ResidentHome(),
-                      //     ));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const  HomeScreen(),));
                     },
                     child: const Text(
                       'Sign In',
@@ -104,7 +103,6 @@ class _LoginUserState extends State<LoginUser> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.03,
                 ),
-              
               ],
             ),
           ),
