@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:librabry_management_system_odoo/Model/bookmodel.dart';
+import 'package:librabry_management_system_odoo/Screens/Home%20Screen/addtocart.dart';
 import 'package:librabry_management_system_odoo/Screens/Home%20Screen/requestbook.dart';
 
 class Bookdetails extends StatefulWidget {
-  const Bookdetails({super.key, required this.imagelink});
+  const Bookdetails(
+      {super.key,
+      required this.imagelink,
+      required this.title,
+      required this.authorname});
   final String imagelink;
+  final String title;
+  final String authorname;
 
   @override
   State<Bookdetails> createState() => _BookdetailsState();
@@ -39,21 +47,35 @@ class _BookdetailsState extends State<Bookdetails> {
               padding: EdgeInsets.only(left: 30.0),
               child: Text(
                 maxLines: 4,
-                'Book Name :TO Kill A Mockingbird',style: TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.bold),),
+                'Book Name :TO Kill A Mockingbird',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
             const Padding(
-              padding: EdgeInsets.only(left: 30.0,top : 5),
+              padding: EdgeInsets.only(left: 30.0, top: 5),
               child: Text(
                 maxLines: 4,
-                'Author Name : Smit.c.joshi',style: TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.bold),),
+                'Author Name : Smit.c.joshi',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
-             const Padding(
-              padding: EdgeInsets.only(left: 30.0,top : 5),
+            const Padding(
+              padding: EdgeInsets.only(left: 30.0, top: 5),
               child: Text(
                 maxLines: 4,
-                'Description :',style: TextStyle(color: Colors.black,fontSize: 16,fontWeight: FontWeight.bold),),
+                'Description :',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
-            
             Expanded(
               child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
@@ -101,7 +123,14 @@ class _BookdetailsState extends State<Bookdetails> {
                     // Adjusted width
                     ),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Requestbook(imagelink: widget.imagelink, name: 'To Kill A Mockingbird', authorname: 'Smit.c.joshi'),));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Requestbook(
+                            imagelink: widget.imagelink,
+                            name: 'To Kill A Mockingbird',
+                            authorname: 'Smit.c.joshi'),
+                      ));
                 },
                 child: const Text('Request Book'))
           ],

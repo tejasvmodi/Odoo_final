@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:librabry_management_system_odoo/Repository/loginrepository.dart';
 import 'package:librabry_management_system_odoo/Screens/Home%20Screen/home.dart';
+import 'package:librabry_management_system_odoo/Util/util.dart';
+
 class LoginUser extends StatefulWidget {
   const LoginUser({super.key});
 
@@ -13,9 +16,7 @@ class _LoginUserState extends State<LoginUser> {
   final _password = TextEditingController();
   @override
   Widget build(BuildContext context) {
-  
     return Scaffold(
-      
       body: Center(
         child: Container(
           padding: EdgeInsets.all(MediaQuery.of(context).size.height * 0.02),
@@ -94,7 +95,19 @@ class _LoginUserState extends State<LoginUser> {
                         backgroundColor: const MaterialStatePropertyAll(
                             Color.fromARGB(255, 202, 212, 230))),
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => const  HomeScreen(),));
+                      if (_emailID.text == 'admin@gmail.com' &&
+                          _password.text == 'admin') {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const HomeScreen()));
+                      } else {
+                        showSnackkBar(
+                          message: 'Username Or Password Invalid',
+                          title: 'error',
+                          icon: const Icon(Icons.error),
+                        );
+                      }
                     },
                     child: const Text(
                       'Sign In',

@@ -77,7 +77,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => const Bookdetails(
-                                    imagelink: 'assets/book2.jpeg'),
+                                    imagelink: 'assets/book2.jpeg', title: 'To Kill a Mokingbird', authorname: 'Smit.c.Joshi',),
                               ),
                             );
                           },
@@ -172,7 +172,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       context,
                       MaterialPageRoute(
                         builder: (context) =>
-                            const Bookdetails(imagelink: 'assets/book1.jpeg'),
+                            const Bookdetails(imagelink: 'assets/book1.jpeg', title: 'Charles Dickens', authorname: 'Yash.C.Mehta',),
                       ),
                     );
                   },
