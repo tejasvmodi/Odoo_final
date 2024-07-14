@@ -78,41 +78,57 @@ class _LoginUserState extends State<LoginUser> {
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.03,
                 ),
-                TextButton(
-                    style: ButtonStyle(
-                        fixedSize: MaterialStatePropertyAll(Size(
-                            MediaQuery.of(context).size.width * 0.8,
-                            MediaQuery.of(context).size.height * 0.09)),
-                        shape: MaterialStatePropertyAll(
-                          BeveledRectangleBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.elliptical(
-                                  MediaQuery.of(context).size.width * 0.02,
-                                  MediaQuery.of(context).size.width * 0.02),
-                            ),
-                          ),
-                        ),
-                        backgroundColor: const MaterialStatePropertyAll(
-                            Color.fromARGB(255, 202, 212, 230))),
-                    onPressed: () {
-                      if (_emailID.text == 'admin@gmail.com' &&
-                          _password.text == 'admin') {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const HomeScreen()));
-                      } else {
-                        showSnackkBar(
-                          message: 'Username Or Password Invalid',
-                          title: 'error',
-                          icon: const Icon(Icons.error),
-                        );
-                      }
-                    },
-                    child: const Text(
-                      'Sign In',
-                      style: TextStyle(color: Colors.black, fontSize: 25),
-                    )),
+             TextButton(
+  style: ButtonStyle(
+    fixedSize: MaterialStateProperty.all(
+      Size(
+        MediaQuery.of(context).size.width * 0.8,
+        MediaQuery.of(context).size.height * 0.09,
+      ),
+    ),
+    shape: MaterialStateProperty.all(
+      BeveledRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.elliptical(
+            MediaQuery.of(context).size.width * 0.02,
+            MediaQuery.of(context).size.width * 0.02,
+          ),
+        ),
+      ),
+    ),
+    backgroundColor: MaterialStateProperty.all(
+      Color.fromARGB(255, 202, 212, 230),
+    ),
+  ),
+  onPressed: () {
+    if (_emailID.text == 'admin@gmail.com' && _password.text == 'admin') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const HomeScreen(),
+        ),
+      );
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Row(
+            children: const <Widget>[
+              Icon(Icons.error),
+              SizedBox(width: 10),
+              Text('Username Or Password Invalid'),
+            ],
+          ),
+          duration: const Duration(seconds: 2),
+        ),
+      );
+    }
+  },
+  child: const Text(
+    'Sign In',
+    style: TextStyle(color: Colors.black, fontSize: 25),
+  )
+),
+
                 SizedBox(
                   height: MediaQuery.of(context).size.height * 0.03,
                 ),
