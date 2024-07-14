@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:librabry_management_system_odoo/Screens/Home%20Screen/requestbook.dart';
 
 class Bookdetails extends StatefulWidget {
   const Bookdetails({super.key, required this.imagelink});
@@ -101,7 +100,9 @@ class _BookdetailsState extends State<Bookdetails> {
                     fixedSize: const MaterialStatePropertyAll(Size(170, 50))
                     // Adjusted width
                     ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Requestbook(imagelink: widget.imagelink, name: 'To Kill A Mockingbird', authorname: 'Smit.c.joshi'),));
+                },
                 child: const Text('Request Book'))
           ],
         ),
