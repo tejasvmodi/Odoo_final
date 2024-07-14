@@ -1,3 +1,5 @@
+<H1>Book Library App</H1>
+
 Welcome to the Flutter Book Library App! This application allows users to browse and request books from a digital library. It includes features for user authentication, book recommendations based on user activity, and a straightforward interface for browsing and requesting books.
 
 Features
